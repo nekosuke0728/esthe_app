@@ -75,4 +75,9 @@ gem 'autoprefixer-rails', '~> 7.1', '>= 7.1.6'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 # font-awesome
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
+# devise
+gem 'devise', '~> 4.3'
+gem 'devise-bootstrap-views', '~> 0.0.11'
+gem 'devise-i18n', '~> 1.4'
+gem 'devise-i18n-views', '~> 0.3.7'
 
