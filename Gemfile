@@ -39,6 +39,13 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  # 追加 -----------------------------------------------------------------------------
+  gem 'hirb'                    # モデルの出力結果を表形式で表示するGem
+  gem 'hirb-unicode'            # 日本語などマルチバイト文字の出力時の出力結果のずれに対応  
+  gem 'pry-rails'               # rails cでirbの代わりにpryを使われる
+  gem 'pry-doc'                 # methodを表示
+  gem 'pry-byebug'              # デバッグを実施
+  gem 'pry-stack_explorer'      # スタックをたどれる
 end
 
 group :development do
@@ -48,6 +55,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # 追加 -----------------------------------------------------------------------------
+  gem 'better_errors'                       # エラー画面をわかりやすく整形してくれる
+  gem 'binding_of_caller'                   # better-errorsのエラー画面でirbを利用する
+  gem 'guard-livereload', require: false    # view自動更新
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
