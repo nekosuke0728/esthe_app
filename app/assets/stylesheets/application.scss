@@ -18,9 +18,22 @@
 // Bootstrap Sass
 @import "bootstrap-sprockets";
 @import "bootstrap";
+// @import 'bootstrap-sass/assets/stylesheets/bootstrap';
+// @import 'bootstrap-sass/assets/stylesheets/bootstrap/custom';
+@import "font-awesome";
+// @import "devise_bootstrap_views";
+@import "devise_bootstrap_views";
 
 // http://neos21.hatenablog.com/entry/2017/03/17/000347
 // 順序：bootstrap-sprockets → bootstrap
 
+// https://suin.io/544
+// 順序：bootstrap-sprockets → bootstrap → devise_bootstrap_views
+
 // ← このコメントの書き方だとコンパイル時に削除される
 // コンパイル後も残したいコメントは /*! コメント */ と書く
+
+body {
+  padding-top: 70px;
+  padding-bottom: 30px;
+}

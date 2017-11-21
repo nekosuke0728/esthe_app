@@ -15,6 +15,8 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 // require bootstrap (不要)
+// ※こちらはパスを指定しないとロードできない
+// require bootstrap-sass/assets/javascripts/bootstrap
 //= require_tree .
 
 // https://qiita.com/fursich/items/c2ab11acad918000a8ea
