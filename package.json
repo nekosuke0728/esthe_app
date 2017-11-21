@@ -1,5 +1,7 @@
 {
   "name": "esthe_app",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^1.12.4"
+  }
 }

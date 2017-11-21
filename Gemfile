@@ -63,3 +63,16 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+# Original --------------------------------------------------------------------------
+
+# bootstrap
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+# コンパイル時に自動でベンダープレフィックスをつけてくれる(bootstrap-sass依存関係有)
+gem 'autoprefixer-rails', '~> 7.1', '>= 7.1.6'
+# jquery
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+# font-awesome
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
+
