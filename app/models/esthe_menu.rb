@@ -1,0 +1,2 @@
+class EstheMenu < ApplicationRecord
+end

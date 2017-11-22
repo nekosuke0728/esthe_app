@@ -1,0 +1,37 @@
+<%= form_with(model: esthe_menu, local: true) do |form| %>
+  <% if esthe_menu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(esthe_menu.errors.count, "error") %> prohibited this esthe_menu from being saved:</h2>
+
+      <ul>
+      <% esthe_menu.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :esthe_menu_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :time_frame %>
+    <%= form.number_field :time_frame, id: :esthe_menu_time_frame %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :esthe_menu_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :esthe_menu_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

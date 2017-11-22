@@ -21,4 +21,17 @@ Rails.application.routes.draw do
   get 'user/top'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  scope '/staff' do
+    authenticate :staff do
+      resources :esthe_menus
+    end
+  end
+
+  scope '/user' do
+    namespace :esthe_menus do
+      get :list
+    end
+  end
+
 end

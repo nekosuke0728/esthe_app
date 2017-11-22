@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171121181418) do
+ActiveRecord::Schema.define(version: 20171122060223) do
+
+  create_table "esthe_menus", force: :cascade do |t|
+    t.string "name"
+    t.integer "time_frame"
+    t.text "description"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "staffs", force: :cascade do |t|
     t.string "email", default: "", null: false
