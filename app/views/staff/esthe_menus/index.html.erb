@@ -2,7 +2,7 @@
 
   <h1>エステメニュー登録一覧</h1>
 
-  <%= link_to '新規作成', new_esthe_menu_path, class: "btn btn-primary btn-sm" %>
+  <%= link_to '新規作成', new_staff_esthe_menu_path, class: "btn btn-primary btn-sm" %>
 
   <br>
   <br>
@@ -23,8 +23,8 @@
             <td><%= esthe_menu.name %></td>
             <td><%= esthe_menu.time_frame * 15 %>分</td>
             <td>¥<%= esthe_menu.price %></td>
-            <td class="btn-in-table"><%= link_to '編集', esthe_menus_path(id: esthe_menu.id), class: "btn btn-info btn-sm" %></td>
-            <td class="btn-in-table"><%= link_to '削除', esthe_menu, method: :delete, data: { confirm: '削除してよろしいですか?' }, class: "btn btn-danger btn-sm" %></td>
+            <td class="btn-in-table"><%= link_to '編集', edit_staff_esthe_menu_path(id: esthe_menu.id), class: "btn btn-info btn-sm" %></td>
+            <td class="btn-in-table"><%= link_to '削除', staff_esthe_menu_path(esthe_menu.id), method: :delete, data: { confirm: '削除してよろしいですか?' }, class: "btn btn-danger btn-sm" %></td>
           </tr>
         <% end %>
       </tbody>

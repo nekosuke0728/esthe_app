@@ -18,7 +18,7 @@ class Staff::EstheMenusController < ApplicationController
     def create
       @esthe_menu = EstheMenu.new(esthe_menu_params)
       if @esthe_menu.save
-        redirect_to esthe_menu_path(@esthe_menu), notice: 'エステメニューは正常に作成されました'
+        redirect_to staff_esthe_menu_path(@esthe_menu), notice: 'エステメニューは正常に作成されました'
       else
         render :new
       end
@@ -26,7 +26,7 @@ class Staff::EstheMenusController < ApplicationController
 
     def update
       if @esthe_menu.update(esthe_menu_params)
-        redirect_to esthe_menu_path(@esthe_menu), notice: 'エステメニューは正常に更新されました'
+        redirect_to staff_esthe_menu_path(@esthe_menu), notice: 'エステメニューは正常に更新されました'
       else
         render :edit
       end
@@ -34,7 +34,7 @@ class Staff::EstheMenusController < ApplicationController
 
     def destroy
       @esthe_menu.destroy
-      redirect_to esthe_menus_path, notice: 'エステメニューは正常に削除されました'
+      redirect_to staff_esthe_menus_path, notice: 'エステメニューは正常に削除されました'
     end
 
     private
