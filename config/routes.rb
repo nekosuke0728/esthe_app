@@ -11,16 +11,19 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  # devise_for :staffs
-  # devise_for :users
-
   root 'user#top'
-  
-  get 'staff/top'
-
   get 'user/top'
+  get 'user/access'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  scope '/user' do
+    namespace :esthe_menus do
+      get :list
+    end
+  end
+  
+  authenticate :staff do
+    get 'staff/top'
+  end
 
   scope '/staff' do
     authenticate :staff do
@@ -28,10 +31,6 @@ Rails.application.routes.draw do
     end
   end
 
-  scope '/user' do
-    namespace :esthe_menus do
-      get :list
-    end
-  end
+
 
 end
