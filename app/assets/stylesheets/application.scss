@@ -23,6 +23,7 @@
 @import "font-awesome";
 // @import "devise_bootstrap_views";
 @import "devise_bootstrap_views";
+@import "partials/*"; // glob importing
 
 // http://neos21.hatenablog.com/entry/2017/03/17/000347
 // 順序：bootstrap-sprockets → bootstrap
@@ -33,7 +34,15 @@
 // ← このコメントの書き方だとコンパイル時に削除される
 // コンパイル後も残したいコメントは /*! コメント */ と書く
 
+html {
+  height: 100%;
+}
+
 body {
+  background-image: url(white_wood.jpg);
+  height: 100%;
+  background-size: contain;
+  margin: 0 auto;
   padding-top: 70px;
   padding-bottom: 30px;
 }
@@ -44,4 +53,9 @@ header {
 
 footer {
   text-align: center;
+  background-color: white;
+}
+
+.main-box {
+
 }
