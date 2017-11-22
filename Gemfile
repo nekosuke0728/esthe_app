@@ -80,4 +80,5 @@ gem 'devise', '~> 4.3'
 gem 'devise-bootstrap-views', '~> 0.0.11'
 gem 'devise-i18n', '~> 1.4'
 gem 'devise-i18n-views', '~> 0.3.7'
-
+# 初期データ
+gem 'seed-fu'
