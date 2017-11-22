@@ -15,22 +15,18 @@ Rails.application.routes.draw do
   get 'user/top'
   get 'user/access'
 
-  scope '/user' do
-    namespace :esthe_menus do
-      get :list
+  namespace :user do
+    resources :esthe_menus, only: [:index, :show]
+    authenticate :user do
+      resource :reservation, except: [:edit, :update, :destroy]
     end
   end
-  
-  authenticate :staff do
-    get 'staff/top'
-  end
 
-  scope '/staff' do
+  resources :staff do
     authenticate :staff do
       resources :esthe_menus
+      resources :reservations
     end
   end
-
-
 
 end

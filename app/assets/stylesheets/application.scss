@@ -60,6 +60,16 @@ footer {
   height: 70px;
 }
 
+ul {
+  list-style:none;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .main-contents {
   background: rgba(255,255,255,0.9);
   margin: 5%;
