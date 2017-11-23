@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     authenticate :staff do
       resources :esthe_menus
       resources :reservations
+      resources :time_tables
     end
   end
 

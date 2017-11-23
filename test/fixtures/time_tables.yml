@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2017-11-23
+  time: 1
+  status: false
+
+two:
+  date: 2017-11-23
+  time: 1
+  status: false
