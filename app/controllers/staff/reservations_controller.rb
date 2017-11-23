@@ -18,7 +18,7 @@ class Staff::ReservationsController < ApplicationController
     def create
       @reservation = Reservation.new(reservation_params)
       if @reservation.save
-        redirect_to reservation_path(@reservation), notice: '予約は正常に作成されました'
+        redirect_to staff_reservation_path(@reservation), notice: '予約は正常に作成されました'
       else
         render :new
       end
@@ -26,7 +26,7 @@ class Staff::ReservationsController < ApplicationController
 
     def update
       if @reservation.update(reservation_params)
-        redirect_to reservation_path(@reservation), notice: '予約は正常に更新されました'
+        redirect_to staff_reservation_path(@reservation), notice: '予約は正常に更新されました'
       else
         render :edit
       end
@@ -34,7 +34,7 @@ class Staff::ReservationsController < ApplicationController
 
     def destroy
       @reservation.destroy
-      redirect_to reservations_path, notice: '予約は正常に削除されました'
+      redirect_to staff_reservations_path, notice: '予約は正常に削除されました'
     end
 
     private

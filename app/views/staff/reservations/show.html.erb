@@ -1,0 +1,28 @@
+<div class="main-contents">
+
+<h1>予約詳細</h1>
+
+<p>
+  <strong>User ID:</strong>
+  <%= @reservation.user_id %>
+</p>
+
+<p>
+  <strong>Esthe menu:</strong>
+  <%= @reservation.esthe_menu.name %>
+</p>
+
+<p>
+  <strong>Start at:</strong>
+  <%= @reservation.start_at %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @reservation.comment %>
+</p>
+
+<%= link_to 'Edit', edit_staff_reservation_path(@reservation) %> |
+<%= link_to 'Back', staff_reservations_path %>
+
+</div>

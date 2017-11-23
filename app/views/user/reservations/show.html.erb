@@ -1,0 +1,32 @@
+<div class="main-contents">
+
+  <h1>予約履歴</h1>
+
+  <% if @reservations.nil? %>
+
+    <p>予約履歴はありません。</p>
+
+  <% else %>
+
+  <div class="table-responsive">
+    <table class="table table-condensed table-hover">
+    <thead>
+      <tr>
+        <th>日時</th>
+        <th>コース</th>
+      </tr>
+    </thead>
+      <tbody>
+        <% @reservations.each do |reservation| %>
+          <tr>
+            <td><%= l reservation.start_at, format: :custom %></td>
+            <td><%= reservation.esthe_menu.name %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+    
+  <% end %>
+
+</div>

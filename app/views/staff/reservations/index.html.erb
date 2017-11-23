@@ -1,0 +1,36 @@
+<div class="main-contents">
+
+  <h1>予約一覧</h1>
+
+  <%= link_to '新規作成', new_staff_reservation_path, class: "btn btn-primary btn-sm" %>
+
+  <br>
+  <br>
+
+  <div class="table-responsive">
+    <table class="table table-condensed table-hover">
+    <thead>
+      <tr>
+        <th>ユーザーID</th>
+        <th>予約開始時間</th>
+        <th>エステメニュー</th>
+        <th>ご要望・連絡事項</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+      <tbody>
+        <% @reservations.each do |reservation| %>
+          <tr>
+            <td><%= reservation.user_id %></td>
+            <td><%= l reservation.start_at, format: :custom %></td>
+            <td><%= reservation.esthe_menu.name %></td>
+            <td><%= reservation.comment %></td>
+            <td class="btn-in-table"><%= link_to '編集', edit_staff_reservation_path(id: reservation.id), class: "btn btn-info btn-sm" %></td>
+            <td class="btn-in-table"><%= link_to '削除', staff_reservation_path(reservation.id), method: :delete, data: { confirm: '削除してよろしいですか?' }, class: "btn btn-danger btn-sm" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+</div>
