@@ -12,7 +12,8 @@
     <thead>
       <tr>
         <th>ユーザーID</th>
-        <th>予約開始時間</th>
+        <th>予約日付</th>
+        <th>予約時間</th>
         <th>エステメニュー</th>
         <th>ご要望・連絡事項</th>
         <th colspan="3"></th>
@@ -22,7 +23,8 @@
         <% @reservations.each do |reservation| %>
           <tr>
             <td><%= reservation.user_id %></td>
-            <td><%= l reservation.start_at, format: :custom %></td>
+            <td><%= reservation.time_table.select_date %></td>
+            <td><%= reservation.time_table.time_frame %></td>
             <td><%= reservation.esthe_menu.name %></td>
             <td><%= reservation.comment %></td>
             <td class="btn-in-table"><%= link_to '編集', edit_staff_reservation_path(id: reservation.id), class: "btn btn-info btn-sm" %></td>

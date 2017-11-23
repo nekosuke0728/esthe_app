@@ -44,7 +44,7 @@ class Staff::ReservationsController < ApplicationController
       end
 
       def reservation_params
-        params.require(:reservation).permit(:user_id, :esthe_menu_id, :comment, :start_at)
+        params.require(:reservation).permit(:user_id, :esthe_menu_id, :comment, :time_table_id)
       end
 
 end

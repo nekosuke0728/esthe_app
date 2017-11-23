@@ -12,14 +12,16 @@
     <table class="table table-condensed table-hover">
     <thead>
       <tr>
-        <th>日時</th>
+        <th>日付</th>
+        <th>時間</th>
         <th>コース</th>
       </tr>
     </thead>
       <tbody>
         <% @reservations.each do |reservation| %>
           <tr>
-            <td><%= l reservation.start_at, format: :custom %></td>
+            <td><%= reservation.time_table.select_date %></td>
+            <td><%= reservation.time_table.time_frame %></td>
             <td><%= reservation.esthe_menu.name %></td>
           </tr>
         <% end %>

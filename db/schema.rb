@@ -24,11 +24,12 @@ ActiveRecord::Schema.define(version: 20171123091208) do
   create_table "reservations", force: :cascade do |t|
     t.integer "user_id"
     t.integer "esthe_menu_id"
-    t.datetime "start_at"
+    t.integer "time_table_id"
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["esthe_menu_id"], name: "index_reservations_on_esthe_menu_id"
+    t.index ["time_table_id"], name: "index_reservations_on_time_table_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 

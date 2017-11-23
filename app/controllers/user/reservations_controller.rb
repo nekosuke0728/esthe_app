@@ -26,7 +26,7 @@ class User::ReservationsController < ApplicationController
     end
 
     def reservation_params
-      params.require(:reservation).permit(:esthe_menu_id, :comment, :start_at).merge(user_id: current_user.id)
+      params.require(:reservation).permit(:esthe_menu_id, :comment, :time_table_id).merge(user_id: current_user.id)
     end
 
 end

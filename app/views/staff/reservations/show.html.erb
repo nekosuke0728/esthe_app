@@ -8,17 +8,18 @@
 </p>
 
 <p>
-  <strong>Esthe menu:</strong>
+  <strong>エステメニュー:</strong>
   <%= @reservation.esthe_menu.name %>
 </p>
 
 <p>
-  <strong>Start at:</strong>
-  <%= @reservation.start_at %>
+  <strong>予約日時:</strong>
+  <%= @reservation.time_table.select_date %>
+  <%= @reservation.time_table.time_frame %>
 </p>
 
 <p>
-  <strong>Comment:</strong>
+  <strong>コメント:</strong>
   <%= @reservation.comment %>
 </p>
 

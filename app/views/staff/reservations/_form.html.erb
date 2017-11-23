@@ -22,8 +22,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :start_at %>
-    <%= f.datetime_select :start_at, minute_step: 15, id: :reservation_start_at %>
+    <%= f.label :time_table_id %>
+    <%= f.collection_select :time_table_id, TimeTable.all, :id, :id, include_blank: true %>
   </div>
 
   <div class="field">
