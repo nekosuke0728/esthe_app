@@ -22,8 +22,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :time_table_id %>
-    <%= f.collection_select :time_table_id, TimeTable.all, :id, :id, include_blank: true %>
+    <%= f.hidden_field :time_table_id, value: params[:time_table_id] %>
   </div>
 
   <div class="field">

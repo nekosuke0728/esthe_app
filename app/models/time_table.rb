@@ -17,17 +17,32 @@ class TimeTable < ApplicationRecord
    end
 
    def get_vacancy(date, time_frame)
-     day =  Date.today + date
-     model = self.where(:select_date => day, :time_frame => time_frame)
-     if !model.exsits? #ハイフン
+
+     model = TimeTable.where(:select_date => date, :time_frame => time_frame).first
+
+     if model.nil?
        result = "-"
-     elsif model.status == true
+     elsif  model.status == true
        result = "○"
-     else #false
+     elsif  model.status == false
        result = "☓"
+     else
+       result = "-"
      end
      return result
    end
+
+   # day =  Date.today + date.day
+   # model = TimeTable.where(:select_date => day, :time_frame => time_frame).first
+   #   if model.nil? #ハイフン
+   #     result = "-"
+   #   elsif model.status == true
+   #     result = "○"
+   #   else #false
+   #     result = "☓"
+   #   end
+   #   return result
+   # end
 
    # date 日付
    # time_tablesテーブルでselect_dateがdateと同じものでかつ

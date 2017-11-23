@@ -12,7 +12,11 @@
   <tr>
     <td><%= time_frame[0] %></td>
     <% (@start_day..@end_day).each do |date| %>
-      <td><%= TimeTable.get_vacancy(date, time_frame[1]) %></td>
+      <% t = TimeTable.new  %>
+      <!-- ロジックだからあとでモデルにうつそうぜ -->
+      <% time_tables = TimeTable.where(["select_date = ? and time_frame = ?", date, time_frame[1]]).first %>
+      <%#= time_tables.id if time_tables %>
+      <td><%= vacancy_link(t.get_vacancy(date, time_frame[1]), (time_tables.id if time_tables)) %></td>
     <% end %>
   </tr>
 <% end %>
