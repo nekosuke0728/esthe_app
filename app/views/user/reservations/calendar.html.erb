@@ -2,61 +2,6 @@
 
 <h1>予約日時選択</h1>
 
-<%
-  data = [
-    {
-      time: "10:00-11:00", dates:  [
-        "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎"
-      ]
-    },
-    {
-      time: "11:00-12:00", dates: [
-        "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎"
-      ]
-    },
-    {
-      time: "12:00-13:00", dates: [
-        "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎"
-      ]
-    },
-    {
-      time: "13:00-14:00", dates: [
-        "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎"
-      ]
-    },
-    {
-      time: "14:00-15:00", dates: [
-        "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎"
-      ]
-    },
-    {
-      time: "15:00-16:00", dates: [
-        "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎"
-      ]
-    },
-    {
-      time: "16:00-17:00", dates: [
-        "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎"
-      ]
-    },
-    {
-      time: "17:00-18:00", dates: [
-        "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎"
-      ]
-    },
-    {
-      time: "18:00-19:00", dates: [
-        "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎"
-      ]
-    }, 
-    {
-      time: "19:00-20:00", dates: [
-        "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎", "◎"
-      ]
-    }     
-  ]
-%>
-
 <style>
   table tr, table td {
     padding: 10px;
@@ -64,33 +9,202 @@
 </style>
 
 <table class="table-bordered">
+  <thead>
+    <tr>
+      <th colspan="1"></th> 
+      <% ((Date.today + 1.day)..(Date.today + 14.day)).each do |date| %>
+        <th><%= l date, format: :custom %></th>
+      <% end %> 
+    </tr>
+  </thead>
+
+  <tbody>
+
   <tr>
+    <td><p>10:00-11:00</p></td>
+    <td>
+      
+    </td>
     <td></td>
-    <td><%= l Date.today + 1, format: :custom %></td>
-    <td><%= l Date.today + 2, format: :custom %></td>
-    <td><%= l Date.today + 3, format: :custom %></td>
-    <td><%= l Date.today + 4, format: :custom %></td>
-    <td><%= l Date.today + 5, format: :custom %></td>
-    <td><%= l Date.today + 6, format: :custom %></td>
-    <td><%= l Date.today + 7, format: :custom %></td>
-    <td><%= l Date.today + 8, format: :custom %></td>
-    <td><%= l Date.today + 9, format: :custom %></td>
-    <td><%= l Date.today + 10, format: :custom %></td>
-    <td><%= l Date.today + 11, format: :custom %></td>
-    <td><%= l Date.today + 12, format: :custom %></td>
-    <td><%= l Date.today + 13, format: :custom %></td>
-    <td><%= l Date.today + 14, format: :custom %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><p>11:00-12:00</p></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><p>12:00-13:00</p></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><p>13:00-14:00</p></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><p>14:00-15:00</p></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><p>15:00-16:00</p></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><p>16:00-17:00</p></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><p>17:00-18:00</p></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><p>18:00-19:00</p></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><p>19:00-20:00</p></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
   </tr>
 
-  <% data.each do |time| %>
-    <tr>
-      <td><%= time[:time] %></td>
-      <% time[:dates].each do |date| %>
-        <td><%= date %></td>
-      <% end %>
-    </tr>
-  <% end %>
+  </tbody>
 
 </table>
+
+
+
+<% @time_tables.each do |time_table| %>
+  <%= time_table.select_date %>
+  <%= time_table.time_frame %>
+  <%= time_table.status ? '○' : '✕' %>
+  <br>
+<% end %>
+
 
 </div>

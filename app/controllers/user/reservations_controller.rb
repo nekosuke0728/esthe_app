@@ -21,7 +21,8 @@ class User::ReservationsController < ApplicationController
   end
 
   def calendar
-    
+    @time_tables = TimeTable.all
+    @today = Date.today
   end
 
   private
