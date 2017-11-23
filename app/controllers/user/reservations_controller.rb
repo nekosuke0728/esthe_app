@@ -20,6 +20,10 @@ class User::ReservationsController < ApplicationController
     end
   end
 
+  def calendar
+    
+  end
+
   private
 
     def set_reservation

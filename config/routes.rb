@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   namespace :user do
     resources :esthe_menus, only: [:index, :show]
     authenticate :user do
-      resource :reservation, except: [:edit, :update, :destroy]
+      resource :reservation, except: [:edit, :update, :destroy] do
+        get :calendar
+      end
     end
   end
 
