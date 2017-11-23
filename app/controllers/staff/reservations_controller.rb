@@ -18,6 +18,7 @@ class Staff::ReservationsController < ApplicationController
     def create
       @reservation = Reservation.new(reservation_params)
       if @reservation.save
+        @reservation.time_table.update(status: false)
         redirect_to staff_reservation_path(@reservation), notice: '予約は正常に作成されました'
       else
         render :new

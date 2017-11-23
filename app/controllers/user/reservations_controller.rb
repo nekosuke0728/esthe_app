@@ -13,6 +13,7 @@ class User::ReservationsController < ApplicationController
     @user = current_user
     @reservation = Reservation.new(reservation_params)
     if @reservation.save
+      @reservation.time_table.update(status: false)
       redirect_to user_reservation_path, notice: '予約が完了しました'
     else
       render :new
