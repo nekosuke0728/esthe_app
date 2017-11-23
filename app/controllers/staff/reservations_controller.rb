@@ -35,6 +35,7 @@ class Staff::ReservationsController < ApplicationController
 
     def destroy
       @reservation.destroy
+      @reservation.time_table.update(status: true)
       redirect_to staff_reservations_path, notice: '予約は正常に削除されました'
     end
 
