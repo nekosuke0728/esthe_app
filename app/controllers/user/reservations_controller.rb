@@ -20,9 +20,10 @@ class User::ReservationsController < ApplicationController
     end
   end
 
-  def calendar
+  def index
     @time_tables = TimeTable.all
-    @today = Date.today
+    @start_day = Date.today + 1.day
+    @end_day = Date.today + 14.day
   end
 
   private
