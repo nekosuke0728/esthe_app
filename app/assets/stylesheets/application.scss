@@ -76,3 +76,81 @@ a {
   padding: 5%;
   border-radius: 1rem;
 }
+
+// ============================ header
+
+.dropmenu{
+  *zoom: 1;
+  list-style-type: none;
+  width: 960px;
+  margin: 5px auto 30px;
+  padding: 0;
+  display: table;
+  table-layout: fixed;
+  text-align: center;
+  width: 100%;
+  
+  .dropmenu-box {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    .header-btn {
+      display: block;
+      margin: 0;
+      padding: 50px 0 11px;
+      color: #fff;
+      font-size: 14px;
+      line-height: 1;
+      text-decoration: none;
+    }    
+  }
+}
+
+.dropmenu:before, .dropmenu:after{
+  content: "";
+  display: table;
+}
+
+.dropmenu li a:hover{
+  background: #db7093;
+}
+
+.header-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #ffb6c1;
+  color: #FFF;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  transition: 1s;
+  margin: 0 auto;
+  &:hover {
+    background: #db7093;
+  }
+}
+
+.dropmenu {
+  display: table;
+  // table-layout: fixed;
+  text-align: center;
+  width: 100%;
+}
+.dropmenu li {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.dropmenu li a {
+  letter-spacing: 3px;
+}
+
+.dropmenu li .font-min {
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
