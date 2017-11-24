@@ -33,8 +33,11 @@ class Staff::EstheMenusController < ApplicationController
     end
 
     def destroy
-      @esthe_menu.destroy
-      redirect_to staff_esthe_menus_path, notice: 'エステメニューは正常に削除されました'
+      if @esthe_menu.destroy
+        redirect_to staff_esthe_menus_path, notice: 'エステメニューは正常に削除されました'
+      else
+        redirect_to staff_esthe_menus_path, notice: '予約があるため削除できません'
+      end
     end
 
     private

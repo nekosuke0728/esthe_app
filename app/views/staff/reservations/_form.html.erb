@@ -1,7 +1,7 @@
 <%= form_with(model: [ :staff, reservation], local: true) do |f| %>
   <% if reservation.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
+      <h2><%= pluralize(reservation.errors.count, "") %>件のエラーがあります。</h2>
 
       <ul>
       <% reservation.errors.full_messages.each do |message| %>

@@ -1,0 +1,18 @@
+ja:
+  activerecord:
+    models:
+      esthe_menu: "エステメニュー"
+      reservation: "予約"
+    attributes:
+      esthe_menu:
+        esthe_menus: "エステメニュー"
+        name: "エステメニュー名"
+        time_frame: "時間枠"
+        description: "内容"
+        price: "金額"
+      reservation:
+        reservations: "予約"
+        user_id: "ユーザー"
+        esthe_menu_id: "エステメニュー"
+        time_table_id: "時間枠"
+        comment: "ご要望・ご連絡事項"

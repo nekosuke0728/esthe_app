@@ -1,8 +1,7 @@
 <%= form_with(model: [ :staff, esthe_menu], local: true) do |form| %>
-<%#= form_with(url: staff_esthe_menu_path, local: true, method: :post) do |form| %>
   <% if esthe_menu.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(esthe_menu.errors.count, "error") %> prohibited this esthe_menu from being saved:</h2>
+      <h2><%= pluralize(esthe_menu.errors.count, "") %> 件のエラーがあります。</h2>
 
       <ul>
       <% esthe_menu.errors.full_messages.each do |message| %>
