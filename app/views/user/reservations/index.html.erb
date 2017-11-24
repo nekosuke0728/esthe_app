@@ -1,6 +1,9 @@
 <div class="main-contents">
   <h1>予約日時選択</h1>
-  <table class="table-bordered">
+
+  <br>
+
+  <table class="table-bordered reserve-calender">
     <thead>
       <tr>
         <th></th>
@@ -13,14 +16,12 @@
       <%= render partial: "calendar", locals: {start_day: @start_day, end_day: @end_day} %>
     </tbody>
   </table>
+
+  <br>
+
+  <div>
+    <p> ○　予約可能な時間帯です。クリックいただくと予約ができます。</p>
+    <p> ✕　すでに予約が埋まっているため予約できません。</p>
+    <p> ー　予約を受け付けていない時間帯です。</p>
+  </div>
 </div>
-
-
-
-
-
-<style>
-  table tr, table td {
-    padding: 10px;
-  }
-</style>

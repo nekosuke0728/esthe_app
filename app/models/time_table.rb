@@ -21,13 +21,11 @@ class TimeTable < ApplicationRecord
      model = TimeTable.where(:select_date => date, :time_frame => time_frame).first
 
      if model.nil?
-       result = "-"
+       result = "ー"
      elsif  model.status == true
-       result = "○"
-     elsif  model.status == false
-       result = "☓"
-     else
-       result = "-"
+       result = "◯"
+     else  model.status == false
+       result = "✕"
      end
      return result
    end

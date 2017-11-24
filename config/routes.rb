@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :esthe_menus, only: [:index, :show]
     authenticate :user do
       resources :reservations, only: [:index]
-      # edit,show,の時にIDが見えるとウザい(´・ω・`)
+      # edit,show,の時にIDが見えるとウザいから単数形(´・ω・`)
       resource  :reservation, except: [:edit, :update, :destroy]
     end
   end

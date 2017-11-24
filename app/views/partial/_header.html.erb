@@ -1,0 +1,16 @@
+<% if staff_signed_in? %>
+  <ul class="dropmenu">
+    <li><%= link_to 'TOP', root_path, class: "header-btn" %></li>
+    <li><%= link_to 'MENU', staff_esthe_menus_path, class: "header-btn" %></li>
+    <li><%= link_to 'RESERVE', staff_reservations_path, class: "header-btn" %></li>
+    <li><%= link_to 'TIME TABLE', staff_time_tables_path, class: "header-btn" %></li>
+    <li><%= link_to 'USER', root_path, class: "header-btn" %></li>
+  </ul> 
+<% else %>
+  <ul class="dropmenu">
+    <li><%= link_to 'TOP', root_path, class: "header-btn" %></li>
+    <li><%= link_to 'MENU', user_esthe_menus_path, class: "header-btn" %></li>
+    <li><%= link_to 'RESERVE', user_reservations_path, class: "header-btn" %></li>
+    <li><%= link_to 'ACCESS', user_access_path, class: "header-btn" %></li>
+  </ul> 
+<% end %>

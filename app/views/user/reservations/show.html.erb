@@ -9,18 +9,18 @@
   <% else %>
 
   <div class="table-responsive">
-    <table class="table table-condensed table-hover">
-    <thead>
-      <tr>
-        <th>日付</th>
-        <th>時間</th>
-        <th>コース</th>
-      </tr>
-    </thead>
+    <table id="reserve-show" class="table table-condensed">
+      <thead>
+        <tr>
+          <th>日付</th>
+          <th>時間</th>
+          <th>コース</th>
+        </tr>
+      </thead>
       <tbody>
         <% @reservations.each do |reservation| %>
           <tr>
-            <td><%= reservation.time_table.select_date %></td>
+            <td><%= l reservation.time_table.select_date, format: :custom %></td>
             <td><%= reservation.time_table.time_frame %></td>
             <td><%= reservation.esthe_menu.name %></td>
           </tr>

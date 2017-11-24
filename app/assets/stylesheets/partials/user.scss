@@ -2,13 +2,12 @@
 
 .top-salon-img {
   background-image: url(salon.jpg);
-  // width: 70%;
   height: 600px;
   margin: 0 auto;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  margin-top: 10%;
+  margin-top: 5%;
   border-radius: 3rem;
   position: relative;
 
@@ -29,14 +28,14 @@
   }
 
   .main-logo {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 7vw; 
+    font-size: 700%; 
     height: 100%; 
     text-align: center;
     line-height: 600%; 
     font-weight: bold;
     letter-spacing: 2.5rem;
     color: #454545;
+    animation-duration: 4s;
   } 
 }
 
@@ -44,9 +43,8 @@
   margin: 0 auto;
   margin-top: 5%;
   margin-bottom: 20%;
-  width: 75%;
+  width: 85%;
   border-radius: 3rem;
-  padding-bottom: 20%;
   background-color: white;
   color: #333333;
   background: rgba(255,255,255,0.8);
@@ -59,4 +57,25 @@
 
 p {
   color: #556565;
+}
+
+
+
+.reserve-calender {
+  th {
+    text-align: center;
+  }
+  tr td {
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+#reserve-show {
+  th {
+    text-align: center;
+  }
+  td {
+    padding-left: 10%;
+  }
 }

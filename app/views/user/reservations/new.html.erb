@@ -17,25 +17,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :esthe_menu_id %>
-    <%= f.collection_select :esthe_menu_id, EstheMenu.all, :id, :name, include_blank: true %>
-  </div>
-
-  <div class="field">
     <%= f.hidden_field :time_table_id, value: params[:time_table_id] %>
   </div>
 
   <div class="field">
-    <%= f.label :comment %>
+    <%= f.label :esthe_menu_id, "メニュー選択" %>
+    <%= f.collection_select :esthe_menu_id, EstheMenu.all, :id, :name, include_blank: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comment, "ご要望・ご連絡事項" %>
     <%= f.text_area :comment, id: :reservation_comment %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "確定", class: "btn btn-info btn-sm" %>
   </div>
 <% end %>
 
+<br>
 
-<%= link_to 'Back', user_reservation_path, class: "btn btn-primary btn-sm" %>
+<%= link_to 'Back', user_reservations_path, class: "btn btn-info btn-sm" %>
 
 </div>

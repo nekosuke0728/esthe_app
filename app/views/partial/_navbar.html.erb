@@ -1,0 +1,74 @@
+<div class="navbar-header">
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="navbar-brand" href="/">Ranunculus</a>
+</div>
+
+<div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+  <ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+
+      <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+        Dev Menu <span class="caret"></span>
+      </a>
+      
+      <ul class="dropdown-menu">
+        <% if staff_signed_in? %>
+          <li>
+            <%= link_to destroy_staff_session_path, method: :delete do %>
+              <i class="fa fa-sign-out"></i> スタッフログアウト
+            <% end %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to new_staff_registration_path do %>
+              <i class="fa fa-user-plus"></i> スタッフ登録
+            <% end %> 
+          </li>
+          <li>
+            <%= link_to new_staff_session_path do %>
+              <i class="fa fa-sign-in"></i> スタッフログイン
+            <% end %> 
+          </li>
+        <% end %>
+        <li role="separator" class="divider"></li>
+          <li>
+            <%= link_to "https://github.com/nekosuke0728/esthe_app", :target=>["_blank"] do %>
+              <i class="fa fa-github"></i> GitHub
+            <% end %> 
+          </li>
+      </ul>
+    </li>
+
+    <% if user_signed_in? %>
+      <li class="dropdown">
+        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <%= current_user.email %> <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <%= link_to user_reservation_path do %>
+              <i class="fa fa-list-alt"></i> 予約履歴
+            <% end %> 
+          </li>
+          <li role="separator" class="divider"></li>
+          <li>
+            <%= link_to destroy_user_session_path, :method => :delete do %>
+              <i class="fa fa-sign-out"></i> ログアウト
+            <% end %>
+          </li>
+        </ul>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to new_user_session_path do %>
+          <i class="fa fa-lock fa-lg"></i>
+        <% end %>        
+      </li>
+    <% end %>
+  </ul>
+</div>
