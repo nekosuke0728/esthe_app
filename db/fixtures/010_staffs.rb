@@ -5,5 +5,6 @@ CSV.foreach('db/fixtures/seed_staffs.csv') do |row|
     s.id = row[0]
     s.email = row[1]
     s.password = row[2]
+    s.name = row[3]
   end
 end

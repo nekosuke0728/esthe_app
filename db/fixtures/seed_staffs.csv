@@ -1,5 +1,5 @@
-1,staff1@example.com,password
-2,staff2@example.com,password
-3,staff3@example.com,password
-4,staff4@example.com,password
-5,staff5@example.com,password
+1,staff1@example.com,password,staff1
+2,staff2@example.com,password,staff2
+3,staff3@example.com,password,staff3
+4,staff4@example.com,password,staff4
+5,staff5@example.com,password,staff5

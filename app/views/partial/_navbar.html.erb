@@ -47,12 +47,17 @@
     <% if user_signed_in? %>
       <li class="dropdown">
         <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-          <%= current_user.email %> <span class="caret"></span>
+          <%= current_user.name %> さん<span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
           <li>
             <%= link_to user_reservation_path do %>
               <i class="fa fa-list-alt"></i> 予約履歴
+            <% end %> 
+          </li>
+          <li>
+            <%= link_to edit_user_registration_path do %>
+              <i class="fa fa-user"></i> アカウント情報変更
             <% end %> 
           </li>
           <li role="separator" class="divider"></li>

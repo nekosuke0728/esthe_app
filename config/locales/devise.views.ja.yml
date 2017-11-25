@@ -7,14 +7,17 @@ ja:
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"
+        name: "名前"
+        phone: "電話番号"
       staff:
         current_password: "現在のパスワード"
         email: "メールアドレス"
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"
+        name: "名前"
     models:
-      user: "ユーザ"
+      user: "ユーザー"
       staff: "スタッフ"
   devise:
     confirmations:
