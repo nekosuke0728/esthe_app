@@ -40,20 +40,6 @@ body {
   margin-bottom: 60px;
 }
 
-header {
-  text-align: center;
-}
-
-ul {
-  list-style:none;
-}
-
-a {
-  &:hover {
-    text-decoration: none;
-  }
-}
-
 
 // ================================================== navbar
 
@@ -69,6 +55,10 @@ a {
 
 
 // ================================================== header
+
+header {
+  text-align: center;
+}
 
 .dropmenu{
   *zoom: 1;
@@ -152,6 +142,8 @@ a {
   }
 }
 
+
+// ================================================== footer
 
 footer {
   position: absolute;

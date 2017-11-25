@@ -1,0 +1,49 @@
+ul {
+  list-style:none;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
+// label {
+//   vertical-align: top;
+//   display: inline-block;
+//   text-align: right;
+//   width: 22rem;
+//   padding-right: 4rem;
+//   max-width: 100%;
+//   margin-bottom: 5px;
+//   font-weight: bold;
+// }
+
+// textarea {
+//   width: 60%;
+// } 
+
+.field {
+  label {
+    vertical-align: top;
+    display: inline-block;
+    text-align: right;
+    width: 22rem;
+    padding-right: 4rem;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input {
+    width: 60%;
+  }
+
+  textarea {
+    width: 60%;
+  } 
+  #esthe_menu_time_frame {
+    width: 30%;
+  }  
+}

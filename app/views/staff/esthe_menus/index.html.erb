@@ -21,7 +21,7 @@
         <% @esthe_menus.each do |esthe_menu| %>
           <tr>
             <td><%= esthe_menu.name %></td>
-            <td><%= esthe_menu.time_frame * 15 %>分</td>
+            <td><%= esthe_menu.time_frame %>分</td>
             <td>¥<%= esthe_menu.price %></td>
             <td class="btn-in-table"><%= link_to '編集', edit_staff_esthe_menu_path(id: esthe_menu.id), class: "btn btn-info btn-sm" %></td>
             <td class="btn-in-table"><%= link_to '削除', staff_esthe_menu_path(esthe_menu.id), method: :delete, data: { confirm: '削除してよろしいですか?' }, class: "btn btn-danger btn-sm" %></td>
