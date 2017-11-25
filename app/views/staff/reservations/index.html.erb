@@ -1,7 +1,5 @@
 <div class="main-contents">
 
-
-
 <% if @reservation.present? %>
   <% @reservation.errors.full_messages.each do |message| %>
     <div class="alert alert-danger" role="alert">
@@ -11,17 +9,14 @@
 <% end %>
 
   <h1>予約一覧</h1>
-
-  <%= link_to '新規作成', new_staff_reservation_path, class: "btn btn-primary btn-sm" %>
-
-  <br>
-  <br>
-
+  <div class="btn-box">
+    <%= link_to '新規作成', new_staff_reservation_path, class: "btn btn-primary btn-sm btn-right" %>
+  </div>
   <div class="table-responsive">
-    <table class="table table-condensed table-hover">
+    <table id="table"  class="table table-condensed table-hover">
     <thead>
       <tr>
-        <th>ユーザーID</th>
+        <th>お客様名</th>
         <th>予約日付</th>
         <th>予約時間</th>
         <th>エステメニュー</th>
@@ -32,8 +27,8 @@
       <tbody>
         <% @reservations.each do |reservation| %>
           <tr>
-            <td><%= reservation.user_id %></td>
-            <td><%= reservation.time_table.select_date %></td>
+            <td><%= reservation.user.name %></td>
+            <td><%= l reservation.time_table.select_date, format: :custom %></td>
             <td><%= reservation.time_table.time_frame %></td>
             <td><%= reservation.esthe_menu.name %></td>
             <td><%= reservation.comment %></td>

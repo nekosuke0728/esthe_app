@@ -25,6 +25,8 @@
     <%= f.collection_select :esthe_menu_id, EstheMenu.all, :id, :name, include_blank: true %>
   </div>
 
+  <br>
+
   <div class="field">
     <%= f.label :comment, "ご要望・ご連絡事項" %>
     <%= f.text_area :comment, id: :reservation_comment %>
@@ -37,6 +39,6 @@
 
 <br>
 
-<%= link_to 'Back', user_reservations_path, class: "btn btn-info btn-sm" %>
+<%= link_to '戻る', user_reservations_path, class: "btn btn-info btn-sm" %>
 
 </div>

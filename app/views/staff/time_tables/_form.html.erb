@@ -1,7 +1,7 @@
 <%= form_with(model: [ :staff, time_table], local: true) do |f| %>
   <% if time_table.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(time_table.errors.count, "error") %> prohibited this time_table from being saved:</h2>
+      <h2><%= pluralize(reservation.errors.count, "") %>件のエラーがあります。</h2>
 
       <ul>
       <% time_table.errors.full_messages.each do |message| %>
@@ -13,18 +13,25 @@
 
   <div class="field">
     <%= f.label :select_date, "日付" %>
-    <%#= f.date_select. :user_id, User.all, :id, :id, include_blank: true %>
-    <%= f.date_select :select_date %>
-    <%#= f.date_select :date, {:discard_day => true} %>
+    <%= raw sprintf(
+                f.date_select(
+                    :birth_date,
+                    use_month_numbers: true,
+                    start_year:        2017,
+                    end_year:          (Time.now.year + 2),
+                    default:           Date.today,
+                    date_separator:    '%s'),
+                '年 ', '月 ') + '日' %>
   </div>
+
+  <br>
 
   <div class="field">
     <%= f.label :time_frame %>
-    <%#= f.collection_select :esthe_menu_id, EstheMenu.all, :id, :name, include_blank: true %>
     <%= f.select :time_frame, TimeTable.time_frames.keys %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions btn-box">
+    <%= f.submit class: "btn btn-primary btn-sm btn-right" %>
   </div>
 <% end %>

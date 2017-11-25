@@ -71,9 +71,7 @@ p {
 
 
 .reserve-calender {
-  th {
-    text-align: center;
-  }
+
   tr td {
     padding: 10px;
     text-align: center;
@@ -81,10 +79,19 @@ p {
 }
 
 #reserve-show {
-  th {
-    text-align: center;
-  }
+
   td {
     padding-left: 10%;
   }
+}
+
+#menu-table {
+  padding: {
+    right: 3%;
+    left: 3%;
+  }
+  .menu_time_price {
+    font-size: 18px;
+    padding-left: 70%;
+  }  
 }

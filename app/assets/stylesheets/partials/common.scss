@@ -9,20 +9,27 @@ a {
 }
 
 
-// label {
-//   vertical-align: top;
-//   display: inline-block;
-//   text-align: right;
-//   width: 22rem;
-//   padding-right: 4rem;
-//   max-width: 100%;
-//   margin-bottom: 5px;
-//   font-weight: bold;
-// }
 
-// textarea {
-//   width: 60%;
-// } 
+.btn-box {
+  height: 40px;
+  .btn-right {
+    float: right;
+    margin-right: 5%;
+    text-align: center;
+  }
+}
+
+
+
+#table {
+  margin-top: 3%;
+  th {
+    text-align: center;
+  }
+  td {
+    text-align: center;
+  }  
+}
 
 .field {
   label {
@@ -42,8 +49,21 @@ a {
 
   textarea {
     width: 60%;
+    height: 100px;
   } 
   #esthe_menu_time_frame {
     width: 30%;
   }  
+}
+
+.navbar-staff-screen {
+float: left;
+padding-top: 20px;
+padding-left: 20px;
+line-height: 20px;
+height: 50px;
+letter-spacing: 0.5rem;
+color: #ffb6c1;
+font-size: 1.5rem;
+margin-left: -15px;
 }

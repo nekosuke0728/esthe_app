@@ -33,8 +33,11 @@ class Staff::TimeTablesController < ApplicationController
     end
 
     def destroy
-      @time_table.destroy
-      redirect_to staff_time_tables_path, notice: 'タイムテーブルは正常に削除されました'
+      if @time_table.destroy
+        redirect_to staff_time_tables_path, notice: 'タイムテーブルは正常に削除されました'
+      else
+        redirect_to staff_time_tables_path, notice: '予約があるため削除できません'
+      end
     end
 
     private

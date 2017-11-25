@@ -2,27 +2,16 @@
 
   <h1>MENU</h1>
 
+  <hr>
+
   <% @esthe_menus.each do |esthe_menu| %>
-    <div class="table-responsive">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Time frame</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-            <tr>
-              <h3><%= esthe_menu.name %></h3>
-              <p><%= esthe_menu.description %></p>
-              <td><%= esthe_menu.time_frame * 15 %>分</td>
-              <td>¥<%= esthe_menu.price %></td>
-            </tr>
-        </tbody>
-      </table>
+    <div id="menu-table" class="table-responsive">
+      <h3><%= esthe_menu.name %></h3>
+      <p class="menu_time_price"><%= esthe_menu.time_frame %>分　¥<%= esthe_menu.price %></p>
+      <br>
+      <p><%= esthe_menu.description %></p>
     </div>
-    <br>
-    <br>
+    <hr>
   <% end %>
 
 </div>

@@ -1,6 +1,6 @@
 class TimeTable < ApplicationRecord
 
-  has_one :reservation
+  has_one :reservation, dependent: :restrict_with_error
 
   TIME_FRAME = { "10:00-11:00": 0,
                  "11:00-12:00": 1,
