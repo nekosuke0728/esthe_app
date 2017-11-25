@@ -2,28 +2,29 @@
 
 <h1>予約詳細</h1>
 
-<p>
-  <strong>User ID:</strong>
-  <%= @reservation.user_id %>
-</p>
+<table id="show-table">
+  <tr>
+    <td class="show-column"><strong>お客様名</strong></td>
+    <td><%= @reservation.user.name %></td>
+  </tr>
+  <tr>
+    <td class="show-column"><strong>エステメニュー</strong></td>
+    <td><%= @reservation.esthe_menu.name %></td>
+  </tr>
+  <tr>
+    <td class="show-column"><strong>予約日時</strong></td>
+    <td><%= l @reservation.time_table.select_date, format: :custom %>　<%= @reservation.time_table.time_frame %></td>
+  </tr>
+  <tr>
+    <td class="show-column"><strong>ご要望・ご連絡事項</strong></td>
+    <td><%= simple_format(@reservation.comment) %></td>
+  </tr>
+  
+</table>
 
-<p>
-  <strong>エステメニュー:</strong>
-  <%= @reservation.esthe_menu.name %>
-</p>
-
-<p>
-  <strong>予約日時:</strong>
-  <%= @reservation.time_table.select_date %>
-  <%= @reservation.time_table.time_frame %>
-</p>
-
-<p>
-  <strong>コメント:</strong>
-  <%= @reservation.comment %>
-</p>
-
-<%= link_to '編集', edit_staff_reservation_path(@reservation) %> |
-<%= link_to '戻る', staff_reservations_path %>
+<div class="btn-box">
+  <%= link_to '戻る', staff_reservations_path %>
+  <%= link_to '編集', edit_staff_reservation_path(@reservation), class: "btn btn-info btn-sm btn-right" %>  
+</div>
 
 </div>

@@ -3,12 +3,12 @@
 
   <br>
 
-  <table class="table-bordered reserve-calender">
+  <table id="table" class="table-bordered reserve-calender">
     <thead>
       <tr>
         <th></th>
         <% (@start_day..@end_day).each do |date| %>
-          <th><%= l date, format: :custom %></th>
+          <th><%= l date, format: :custom2 %></th>
         <% end %>
       </tr>
     </thead>
@@ -25,3 +25,4 @@
     <p> ー　予約を受け付けていない時間帯です。</p>
   </div>
 </div>
+

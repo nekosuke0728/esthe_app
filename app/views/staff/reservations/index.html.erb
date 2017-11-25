@@ -31,8 +31,12 @@
             <td><%= l reservation.time_table.select_date, format: :custom %></td>
             <td><%= reservation.time_table.time_frame %></td>
             <td><%= reservation.esthe_menu.name %></td>
-            <td><%= reservation.comment %></td>
-            <td class="btn-in-table"><%= link_to '編集', edit_staff_reservation_path(id: reservation.id), class: "btn btn-info btn-sm" %></td>
+            <td>
+              <% if reservation.comment.present? %>
+                <p>✓</p>
+              <% end %>
+            </td>
+            <td class="btn-in-table"><%= link_to '詳細', staff_reservation_path(reservation.id), class: "btn btn-info btn-sm" %></td>
             <td class="btn-in-table"><%= link_to '削除', staff_reservation_path(reservation.id), method: :delete, data: { confirm: '削除してよろしいですか?' }, class: "btn btn-danger btn-sm" %></td>
           </tr>
         <% end %>

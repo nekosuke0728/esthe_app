@@ -41,7 +41,8 @@ ja:
       default: "%Y/%m/%d"
       long: "%Y年%m月%d日(%a)"
       short: "%m/%d"
-      custom: "%m/%d (%a)"
+      custom: "%Y/%m/%d (%a)"
+      custom2: "%m/%d (%a)"
     month_names:
     -
     - 1

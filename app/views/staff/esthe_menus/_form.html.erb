@@ -29,20 +29,21 @@
   <br>
 
   <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description, id: :esthe_menu_description %>
-  </div>
-
-  <br>
-
-  <div class="field">
     <%= f.label :price %>
     <%= f.number_field :price, id: :esthe_menu_price %>
   </div>
 
   <br>
 
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description, id: :esthe_menu_description %>
+  </div>
+
+  <br>
+
   <div class="actions btn-box">
+    <%= link_to '戻る', staff_esthe_menus_path %>
     <%= f.submit class: "btn btn-primary btn-sm btn-right" %>
   </div>
 <% end %>

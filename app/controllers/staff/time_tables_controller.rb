@@ -2,7 +2,8 @@ class Staff::TimeTablesController < ApplicationController
     before_action :set_time_table, only: [:show, :edit, :update, :destroy]
 
     def index
-      @time_tables = TimeTable.all
+      @time_tables = TimeTable.page(params[:page]).per(25)
+                              .order({ select_date: :desc }, { time_frame: :desc })
     end
 
     def show
@@ -26,7 +27,7 @@ class Staff::TimeTablesController < ApplicationController
 
     def update
       if @time_table.update(time_table_params)
-        redirect_to staff_time_table_path(@time_table), notice: 'タイムテーブルは正常に更新されました'
+        redirect_to staff_time_tables_path, notice: 'タイムテーブルは正常に更新されました'
       else
         render :edit
       end
@@ -36,7 +37,7 @@ class Staff::TimeTablesController < ApplicationController
       if @time_table.destroy
         redirect_to staff_time_tables_path, notice: 'タイムテーブルは正常に削除されました'
       else
-        redirect_to staff_time_tables_path, notice: '予約があるため削除できません'
+        redirect_to staff_time_tables_path, alert: '予約があるため削除できません'
       end
     end
 

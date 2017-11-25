@@ -1,8 +1,8 @@
 <%= form_with(model: [ :staff, time_table], local: true) do |f| %>
+
   <% if time_table.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(reservation.errors.count, "") %>件のエラーがあります。</h2>
-
       <ul>
       <% time_table.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -15,7 +15,7 @@
     <%= f.label :select_date, "日付" %>
     <%= raw sprintf(
                 f.date_select(
-                    :birth_date,
+                    :select_date,
                     use_month_numbers: true,
                     start_year:        2017,
                     end_year:          (Time.now.year + 2),
@@ -33,5 +33,6 @@
 
   <div class="actions btn-box">
     <%= f.submit class: "btn btn-primary btn-sm btn-right" %>
+    <%= link_to '戻る', staff_time_tables_path %>
   </div>
 <% end %>

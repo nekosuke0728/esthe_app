@@ -7,9 +7,9 @@
   <% @esthe_menus.each do |esthe_menu| %>
     <div id="menu-table" class="table-responsive">
       <h3><%= esthe_menu.name %></h3>
-      <p class="menu_time_price"><%= esthe_menu.time_frame %>分　¥<%= esthe_menu.price %></p>
+      <p class="menu_time_price"><%= esthe_menu.time_frame %>分　　¥<%= esthe_menu.price %></p>
       <br>
-      <p><%= esthe_menu.description %></p>
+      <p><%= simple_format(esthe_menu.description) %></p>
     </div>
     <hr>
   <% end %>

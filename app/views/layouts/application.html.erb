@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8">
     <title>Ranunculus</title>
@@ -11,28 +12,23 @@
   </head>
 
   <body>
-
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <%= render "partial/navbar" %>
       </div>
     </nav>
-
     <header>
       <%= render "partial/header" %>
     </header>
-
     <div class="container">
       <%= render "partial/notice_alert" %>
+      <div class="main-box ">
+        <%= yield %>
+      </div>
     </div>
-
-    <div class="container main-box ">
-      <%= yield %>
-    </div>
-
     <footer>
       <%= render "partial/footer" %>
     </footer>
-
   </body>
+
 </html>

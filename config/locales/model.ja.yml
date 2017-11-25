@@ -14,8 +14,11 @@ ja:
       reservation:
         reservations: "予約"
         user_id: "ユーザー"
+        user: "ユーザー"
         esthe_menu_id: "エステメニュー"
+        esthe_menu: "エステメニュー"
         time_table_id: "時間枠"
+        time_table: "時間枠"
         comment: "ご要望・ご連絡事項"
       time_table:
         time_frame: "時間枠"

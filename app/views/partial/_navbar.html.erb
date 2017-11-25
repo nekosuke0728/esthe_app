@@ -19,35 +19,40 @@
         Dev Menu <span class="caret"></span>
       </a>
       <ul class="dropdown-menu">
-        <% if staff_signed_in? %>
-          <li>
-            <%= link_to destroy_staff_session_path, method: :delete do %>
-              <i class="fa fa-sign-out"></i> スタッフログアウト
-            <% end %>
-          </li>
-        <% else %>
-          <li>
-            <%= link_to new_staff_registration_path do %>
-              <i class="fa fa-user-plus"></i> スタッフ登録
-            <% end %> 
-          </li>
+        <% unless staff_signed_in? %>
           <li>
             <%= link_to new_staff_session_path do %>
               <i class="fa fa-sign-in"></i> スタッフログイン
             <% end %> 
           </li>
-        <% end %>
-        <li role="separator" class="divider"></li>
           <li>
-            <%= link_to "https://github.com/nekosuke0728/esthe_app", :target=>["_blank"] do %>
-              <i class="fa fa-github"></i> GitHub
-            <% end %> 
+            <%= link_to new_staff_registration_path do %>
+              <i class="fa fa-user-plus"></i> スタッフ登録
+            <% end %>
           </li>
+          <li role="separator" class="divider"></li> 
+        <% end %>
+        <li>
+          <%= link_to "https://github.com/nekosuke0728/esthe_app", :target=>["_blank"] do %>
+            <i class="fa fa-github"></i> GitHub
+          <% end %> 
+        </li>
       </ul>
     </li>
 
-    <% if user_signed_in? %>
-      <li class="dropdown">
+    <li class="dropdown">
+      <% if staff_signed_in? %>
+        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <%= current_staff.name %> さん<span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <%= link_to destroy_staff_session_path, method: :delete do %>
+              <i class="fa fa-sign-out"></i> ログアウト
+            <% end %>
+          </li>
+        </ul>
+      <% elsif user_signed_in? %>
         <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
           <%= current_user.name %> さん<span class="caret"></span>
         </a>
@@ -69,13 +74,13 @@
             <% end %>
           </li>
         </ul>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to new_user_session_path do %>
-          <i class="fa fa-lock fa-lg"></i>
-        <% end %>        
-      </li>
-    <% end %>
+      <% else %>
+        <li>
+          <%= link_to new_user_session_path do %>
+            <i class="fa fa-lock fa-lg"></i>
+          <% end %>        
+        </li>
+      <% end %>
+    </li>
   </ul>
 </div>

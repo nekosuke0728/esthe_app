@@ -18,7 +18,7 @@
       <tbody>
         <% @time_tables.each do |time_table| %>
           <tr>
-            <td><%= l time_table.select_date, format: :custom %></td>
+            <td><%= l(time_table.select_date, format: :custom) %></td>
             <td><%= time_table.time_frame %></td>
             <td class="btn-in-table"><%= link_to '編集', edit_staff_time_table_path(id: time_table.id), class: "btn btn-info btn-sm" %></td>
             <td class="btn-in-table"><%= link_to '削除', staff_time_table_path(time_table.id), method: :delete, data: { confirm: '削除してよろしいですか?' }, class: "btn btn-danger btn-sm" %></td>
@@ -26,6 +26,10 @@
         <% end %>
       </tbody>
     </table>
+  </div>
+
+  <div class="paginate-box">
+    <%= paginate @time_tables %>
   </div>
 
 </div>

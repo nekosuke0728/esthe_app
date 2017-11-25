@@ -12,6 +12,10 @@ a {
 
 .btn-box {
   height: 40px;
+  margin: {
+    right: 10%;
+    left: 10%;
+  }
   .btn-right {
     float: right;
     margin-right: 5%;
@@ -32,6 +36,7 @@ a {
 }
 
 .field {
+  overflow: hidden;
   label {
     vertical-align: top;
     display: inline-block;
@@ -43,8 +48,16 @@ a {
     font-weight: bold;
   }
 
+  select {
+    width: auto;
+    height: 30px;
+  }
+  .field_with_errors {
+  }
+
   input {
     width: 60%;
+    height: 30px;
   }
 
   textarea {
@@ -57,13 +70,37 @@ a {
 }
 
 .navbar-staff-screen {
-float: left;
-padding-top: 20px;
-padding-left: 20px;
-line-height: 20px;
-height: 50px;
-letter-spacing: 0.5rem;
-color: #ffb6c1;
-font-size: 1.5rem;
-margin-left: -15px;
+  float: left;
+  padding-top: 20px;
+  padding-left: 20px;
+  line-height: 20px;
+  letter-spacing: 0.5rem;
+  color: #ffb6c1;
+  font-size: 1.5rem;
+  margin-left: -15px;
+}
+
+#error_explanation {
+  padding-left: 20%;
+}
+
+#show-table {
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  td {
+    font-size: 14px;
+    padding: 5px;
+  }
+  .show-column {
+    width: 25%;
+    text-align: center;
+  } 
+}
+.paginate-box {
+  text-align: right;
+  padding-top: 50px;
+  .pagenation {
+    display: inline-block;
+  }
 }

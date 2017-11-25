@@ -82,3 +82,6 @@ gem 'devise-i18n', '~> 1.4'
 gem 'devise-i18n-views', '~> 0.3.7'
 # 初期データ
 gem 'seed-fu'
+# ページネーション
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem 'kaminari-bootstrap', '~> 3.0', '>= 3.0.1'

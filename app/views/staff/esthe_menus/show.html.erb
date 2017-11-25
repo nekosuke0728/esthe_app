@@ -2,27 +2,29 @@
 
 <h1>エステメニュー詳細</h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @esthe_menu.name %>
-</p>
+<table id="show-table">
+  <tr>
+    <td class="show-column"><strong>エステメニュー名</strong></td>
+    <td><%= @esthe_menu.name %></td>
+  </tr>
+  <tr>
+    <td class="show-column"><strong>時間枠</strong></td>
+    <td><%= @esthe_menu.time_frame %> 分</td>
+  </tr>
+  <tr>
+    <td class="show-column"><strong>金額</strong></td>
+    <td><%= @esthe_menu.price %> 円</td>
+  </tr>
+  <tr>
+    <td class="show-column"><strong>内容</strong></td>
+    <td><%= simple_format(@esthe_menu.description) %></td>
+  </tr>
+  
+</table>
 
-<p>
-  <strong>Time frame:</strong>
-  <%= @esthe_menu.time_frame * 15 %>分
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @esthe_menu.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @esthe_menu.price %>
-</p>
-
-<%= link_to '編集', edit_staff_esthe_menu_path(@esthe_menu) %> |
-<%= link_to '戻る', staff_esthe_menus_path %>
+<div class="btn-box">
+  <%= link_to '戻る', staff_esthe_menus_path %>
+  <%= link_to '編集', edit_staff_esthe_menu_path(@esthe_menu), class: "btn btn-info btn-sm btn-right" %>  
+</div>
 
 </div>
