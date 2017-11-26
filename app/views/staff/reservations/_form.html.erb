@@ -27,7 +27,7 @@
 
   <div class="field">
     <%= f.label :time_table_id %>
-    <%= f.collection_select :time_table_id, TimeTable.all, :id, :id, include_blank: true %>
+    <%= f.collection_select :time_table_id, @time_tables.all, :id, :view_date_and_time, include_blank: true %>
   </div>
 
   <br>

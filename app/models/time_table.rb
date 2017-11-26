@@ -32,4 +32,8 @@ class TimeTable < ApplicationRecord
     return result
   end
 
+  def view_date_and_time
+    self.select_date.to_s + ' ／ ' + self.time_frame
+  end
+
 end

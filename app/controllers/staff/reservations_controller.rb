@@ -2,13 +2,15 @@ class Staff::ReservationsController < ApplicationController
     before_action :set_reservation, only: [:show, :edit, :update, :destroy]
 
     def index
-      @reservations = Reservation.all
+      @reservations = Reservation.page(params[:page]).per(25)
+                                 .eager_load(:time_table).order("time_tables.select_date DESC")
     end
 
     def show
     end
 
     def new
+      @time_tables = TimeTable.where(status: true, select_date: Date.today..Date.today + 14.day)
       @reservation = Reservation.new
     end
 
@@ -16,6 +18,7 @@ class Staff::ReservationsController < ApplicationController
     end
 
     def create
+      @time_tables = TimeTable.where(status: true, select_date: Date.today..Date.today + 14.day)
       @reservation = Reservation.new(reservation_params)
       if @reservation.save
         @reservation.time_table.update(status: false)
