@@ -1,15 +1,16 @@
 <div class="main-contents">
   <h1>ACCESS</h1>
-
-  <div>
-    <p>
-      <%= @salon.name %><%= @salon.description %>
-    </p>
-
-    <div id="map" style="width: 800px; height: 400px;"></div>
-
+  <div id="access-box">
+    <h3>エステサロン　Ranunculus（ラナンキュラス）</h3>
+    <br>
+    <h4>予約受付：03-XXXX-XXXX</h4>
+    <br>
+    <p>〒150-0044</p>
+    <p>渋谷区円山町20-1 新大宗円山ビル11F</p>
+    <p><%= @salon.name %><%= @salon.description %></p>     
   </div>
 
+  <div id="map"></div>
 </div>
 
 <script>

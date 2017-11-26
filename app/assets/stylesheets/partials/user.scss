@@ -92,3 +92,24 @@ p {
     padding-left: 70%;
   }  
 }
+
+#access-box {
+  margin: 5%;
+  h3 {
+    font-weight: bold;
+    letter-spacing: 3px;
+  }
+  h4 {
+    padding-left: 3vw;
+    letter-spacing: 3px;
+  }
+  p {
+    padding-left: 3vw;
+  }
+}
+
+#map {
+  width: 50vw;
+  height: 30vw;
+  margin: auto; 
+}
