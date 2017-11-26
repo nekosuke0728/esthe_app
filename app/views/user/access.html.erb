@@ -2,7 +2,23 @@
   <h1>ACCESS</h1>
 
   <div>
-    map
+    <p>
+      <%= @salon.name %><%= @salon.description %>
+    </p>
+
+    <div id="map" style="width: 800px; height: 400px;"></div>
+
   </div>
 
 </div>
+
+<script>
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(<%= raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    handler.getMap().setCenter(new google.maps.LatLng(35.656228, 139.694968));
+    handler.getMap().setZoom(15);
+  });
+</script>

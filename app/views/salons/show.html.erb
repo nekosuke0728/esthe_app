@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @salon.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @salon.description %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @salon.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @salon.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_salon_path(@salon) %> |
+<%= link_to 'Back', salons_path %>
+
+<div id="map" style="width: 800px; height: 400px;"></div>
+
+<script>
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(<%= raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    handler.getMap().setCenter(new google.maps.LatLng(35.6562277, 139.6949682));
+    handler.getMap().setZoom(15);
+  });
+
+  // handler = Gmaps.build('Google');
+  // handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  //   markers = handler.addMarkers(#{raw @hash.to_json});
+  //   handler.bounds.extendWith(markers);
+  //   handler.fitMapToBounds();
+  //   handler.getMap().setCenter(new google.maps.LatLng(35.681298, 139.7640582));
+  //   handler.getMap().setZoom(12);
+  // });
+</script>

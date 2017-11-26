@@ -85,3 +85,7 @@ gem 'seed-fu'
 # ページネーション
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'kaminari-bootstrap', '~> 3.0', '>= 3.0.1'
+# google map
+gem 'gmaps4rails'
+gem "geocoder"
+
