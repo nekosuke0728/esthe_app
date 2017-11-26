@@ -1,5 +1,6 @@
 class Staff::ReservationsController < ApplicationController
     before_action :set_reservation, only: [:show, :edit, :update, :destroy]
+    before_action :set_time_table, only: [:new, :edit, :create]
 
     def index
       @reservations = Reservation.page(params[:page]).per(25)
@@ -10,7 +11,6 @@ class Staff::ReservationsController < ApplicationController
     end
 
     def new
-      @time_tables = TimeTable.where(status: true, select_date: Date.today..Date.today + 14.day)
       @reservation = Reservation.new
     end
 
@@ -18,11 +18,10 @@ class Staff::ReservationsController < ApplicationController
     end
 
     def create
-      @time_tables = TimeTable.where(status: true, select_date: Date.today..Date.today + 14.day)
       @reservation = Reservation.new(reservation_params)
       if @reservation.save
         @reservation.time_table.update(status: false)
-        redirect_to staff_reservation_path(@reservation), notice: '予約は正常に作成されました'
+        redirect_to staff_reservation_path(@reservation), notice: '予約は正常に作成されました。'
       else
         render :new
       end
@@ -30,7 +29,7 @@ class Staff::ReservationsController < ApplicationController
 
     def update
       if @reservation.update(reservation_params)
-        redirect_to staff_reservation_path(@reservation), notice: '予約は正常に更新されました'
+        redirect_to staff_reservation_path(@reservation), notice: '予約は正常に更新されました。'
       else
         render :edit
       end
@@ -39,7 +38,7 @@ class Staff::ReservationsController < ApplicationController
     def destroy
       if @reservation.destroy
         @reservation.time_table.update(status: true)
-        redirect_to staff_reservations_path, notice: '予約は正常に削除されました'
+        redirect_to staff_reservations_path, notice: '予約は正常に削除されました。'
       end
     end
 
@@ -51,6 +50,10 @@ class Staff::ReservationsController < ApplicationController
 
       def reservation_params
         params.require(:reservation).permit(:user_id, :esthe_menu_id, :comment, :time_table_id)
+      end
+
+      def set_time_table
+        @time_tables = TimeTable.where(status: true, select_date: Date.today..Date.today + 14.day)
       end
 
 end

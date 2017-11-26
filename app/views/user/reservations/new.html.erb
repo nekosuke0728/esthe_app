@@ -31,13 +31,12 @@
     <%= f.text_area :comment, id: :reservation_comment %>
   </div>
 
+  <br>
+
   <div class="actions btn-box">
-    <%= f.submit "確定", class: "btn btn-info btn-sm btn-right" %>
+    <%= link_to '戻る', user_reservations_path %>
+    <%= f.submit "確定", class: "btn btn-primary btn-sm btn-right" %>
   </div>
 <% end %>
-
-<br>
-
-<%= link_to '戻る', user_reservations_path %>
 
 </div>
