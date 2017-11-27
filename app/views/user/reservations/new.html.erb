@@ -2,41 +2,44 @@
 
 <h1>新規予約</h1>
 
-<%= form_with(model: @reservation, url: user_reservation_path) do |f| %>
+  <%= form_with(model: @reservation, url: user_reservation_path, local: true) do |f| %>
 
-  <% if @reservation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@reservation.errors.count, "") %>件のエラーがあります。</h2>
-      <ul>
-      <% @reservation.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <% if @reservation.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@reservation.errors.count, "") %>件のエラーがあります。</h2>
+        <ul>
+        <% @reservation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <!-- <div class="field"> -->
+      <%#= label :time_table_id, "時間枠" %>
+      <%#= session[:time_table_id] %>
+      <%# time_table = TimeTable.find_by(id: @reservation.time_table_id) %>
+      <%#= @time_table.select_date %>　<%#= @time_table.time_frame %>
+    <!-- </div> -->
+
+    <div class="field">
+      <%= f.label :esthe_menu_id, "メニュー選択" %>
+      <%= f.collection_select :esthe_menu_id, EstheMenu.all, :id, :name, include_blank: true %>
+    </div>
+
+    <br>
+
+    <div class="field">
+      <%= f.label :comment, "ご要望・ご連絡事項" %>
+      <%= f.text_area :comment, id: :reservation_comment %>
+    </div>
+
+    <br>
+
+    <div class="actions btn-box">
+      <%= link_to '戻る', user_reservations_path %>
+      <%= f.submit "確定", class: "btn btn-primary btn-sm btn-right" %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.hidden_field :time_table_id, value: params[:time_table_id] %>
-  </div>
-
-  <div class="field">
-    <%= f.label :esthe_menu_id, "メニュー選択" %>
-    <%= f.collection_select :esthe_menu_id, EstheMenu.all, :id, :name, include_blank: true %>
-  </div>
-
-  <br>
-
-  <div class="field">
-    <%= f.label :comment, "ご要望・ご連絡事項" %>
-    <%= f.text_area :comment, id: :reservation_comment %>
-  </div>
-
-  <br>
-
-  <div class="actions btn-box">
-    <%= link_to '戻る', user_reservations_path %>
-    <%= f.submit "確定", class: "btn btn-primary btn-sm btn-right" %>
-  </div>
-<% end %>
 
 </div>

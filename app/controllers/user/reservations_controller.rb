@@ -6,21 +6,17 @@ class User::ReservationsController < ApplicationController
 
   def new
     @user = current_user
-
-    @time_tables = TimeTable.where(status: true, select_date: Date.today..Date.today + 14.day)
-    @esthe_menus = EstheMenu.all
-
+    # @time_table = TimeTable.find_by(id: session[:time_table_id])
     @reservation = Reservation.new
   end
 
   def create
     @user = current_user
-
-    @esthe_menus = EstheMenu.all
-
     @reservation = Reservation.new(reservation_params)
+    @reservation.time_table_id = session[:time_table_id]
     if @reservation.save
       @reservation.time_table.update(status: false)
+      session[:time_table_id] = nil
       redirect_to user_reservation_path, notice: '予約が完了しました。'
     else
       render :new
@@ -37,6 +33,7 @@ class User::ReservationsController < ApplicationController
 
     def reservation_params
       params.require(:reservation).permit(:esthe_menu_id, :comment, :time_table_id).merge(user_id: current_user.id)
+      # params.require(:reservation).permit(:esthe_menu_id, :comment).merge(user_id: current_user.id, time_table_id: params[:time])
     end
 
 end

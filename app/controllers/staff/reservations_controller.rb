@@ -11,7 +11,9 @@ class Staff::ReservationsController < ApplicationController
     end
 
     def new
+      # @time_tables = TimeTable.where(status: true, select_date: Date.today..Date.today + 14.day).order("time_tables.select_date")
       @reservation = Reservation.new
+      @time_tables = TimeTable.where(status: true, select_date: Date.today..Float::INFINITY).order("time_tables.select_date")
     end
 
     def edit
