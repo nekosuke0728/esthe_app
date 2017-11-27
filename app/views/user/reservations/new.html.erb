@@ -15,12 +15,11 @@
       </div>
     <% end %>
 
-    <!-- <div class="field"> -->
-      <%#= label :time_table_id, "時間枠" %>
-      <%#= session[:time_table_id] %>
-      <%# time_table = TimeTable.find_by(id: @reservation.time_table_id) %>
-      <%#= @time_table.select_date %>　<%#= @time_table.time_frame %>
-    <!-- </div> -->
+    <div class="field">
+      <%= label :time_table_id, "時間枠" %>
+      <%= l @time_table.select_date, format: :custom2 %>
+      <%= @time_table.time_frame %>
+    </div>
 
     <div class="field">
       <%= f.label :esthe_menu_id, "メニュー選択" %>

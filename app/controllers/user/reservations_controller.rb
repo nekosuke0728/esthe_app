@@ -6,8 +6,9 @@ class User::ReservationsController < ApplicationController
 
   def new
     @user = current_user
-    # @time_table = TimeTable.find_by(id: session[:time_table_id])
     @reservation = Reservation.new
+    session[:time_table_id] = params[:time_table_id]
+    @time_table = TimeTable.find(session[:time_table_id])
   end
 
   def create
@@ -33,7 +34,6 @@ class User::ReservationsController < ApplicationController
 
     def reservation_params
       params.require(:reservation).permit(:esthe_menu_id, :comment, :time_table_id).merge(user_id: current_user.id)
-      # params.require(:reservation).permit(:esthe_menu_id, :comment).merge(user_id: current_user.id, time_table_id: params[:time])
     end
 
 end
