@@ -20,9 +20,9 @@
         <td><%= salon.description %></td>
         <td><%= salon.latitude %></td>
         <td><%= salon.longitude %></td>
-        <td><%= link_to 'Show', salon %></td>
-        <td><%= link_to 'Edit', edit_salon_path(salon) %></td>
-        <td><%= link_to 'Destroy', salon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', staff_salon_path(salon) %></td>
+        <td><%= link_to 'Edit', edit_staff_salon_path(salon) %></td>
+        <td><%= link_to 'Destroy', staff_salon_path(salon), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Salon', new_salon_path %>
+<%= link_to 'New Salon', new_staff_salon_path %>

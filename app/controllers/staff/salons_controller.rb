@@ -33,7 +33,7 @@ class Staff::SalonsController < ApplicationController
 
     respond_to do |format|
       if @salon.save
-        format.html { redirect_to @salon, notice: 'Salon was successfully created.' }
+        format.html { redirect_to staff_salon_path(@salon), notice: 'Salon was successfully created.' }
         format.json { render :show, status: :created, location: @salon }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class Staff::SalonsController < ApplicationController
   def update
     respond_to do |format|
       if @salon.update(salon_params)
-        format.html { redirect_to @salon, notice: 'Salon was successfully updated.' }
+        format.html { redirect_to staff_salon_path(@salon), notice: 'Salon was successfully updated.' }
         format.json { render :show, status: :ok, location: @salon }
       else
         format.html { render :edit }
@@ -61,7 +61,7 @@ class Staff::SalonsController < ApplicationController
   def destroy
     @salon.destroy
     respond_to do |format|
-      format.html { redirect_to salons_url, notice: 'Salon was successfully destroyed.' }
+      format.html { redirect_to staff_salons_path, notice: 'Salon was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

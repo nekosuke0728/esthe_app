@@ -1,4 +1,4 @@
-<%= form_with(model: salon, local: true) do |form| %>
+<%= form_with(model: [ :staff, salon], local: true) do |form| %>
   <% if salon.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(salon.errors.count, "error") %> prohibited this salon from being saved:</h2>
