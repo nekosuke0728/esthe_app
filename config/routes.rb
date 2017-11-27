@@ -29,9 +29,8 @@ Rails.application.routes.draw do
       resources :esthe_menus
       resources :reservations
       resources :time_tables
+      resources :salons
     end
   end
-
-  resources :salons
 
 end

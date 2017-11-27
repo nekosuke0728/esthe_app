@@ -1,4 +1,4 @@
-class SalonsController < ApplicationController
+class Staff::SalonsController < ApplicationController
   before_action :set_salon, only: [:show, :edit, :update, :destroy]
 
   # GET /salons
